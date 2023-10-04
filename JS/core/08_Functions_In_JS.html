@@ -13,9 +13,16 @@
 
 <script>
     //So in JS this is how to write down a function.
-    //functional hoisting
+    calculate(10+20) //functional hoisting
+    console.log("functional hoisting")
     //means you can call a function before declaring
 
+    function calculate(n1,n2){
+        console.log(n1+n2);
+        console.log("Calculate Function Invoked")
+    }
+
+    calculate(10,20)
 
     //So, how to call a function
 
