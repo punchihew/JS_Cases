@@ -566,7 +566,6 @@
     function getAllCustomers(){
         //remove all the child elements of tbody before adding the table rows
 
-
             var customer= {
                 id: $('#txtID').val(),
                 name: $('#txtName').val(),
@@ -582,29 +581,35 @@
             </tr>`;
 
             $("#cusTable").append(row)
+
         }
 
 
+    //////////////////////////////////////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////////
+function bindEvents(){
+    $('#cusTable>tr').click(function () {
+        // console.log(this);//tr -> this will return tr html element
+        // console.log($(this));//jquery ob //if we want to access jQuery method we have to convert it to a jquery object
+        // console.log($(this).text()); // now here it will return all the text of tr
 
-    //
-    // $('#cusTable>tr').click(function () {
-    //
-    //     let id = $(this).children(':nth-child(1)').text();
-    //     let name = $(this).children(':nth-child(2)').text();
-    //     let address = $(this).children(':nth-child(3)').text();
-    //     let salary = $(this).children(':nth-child(4)').text();
-    //
-    //     setTextFieldValues(id,name,address,salary);
-    // });
-    //
-    // function setTextFieldValues(id, name, address, salary) {
-    //     $("#txtID").val(id);
-    //     $("#txtName").val(name);
-    //     $("#txtAddress").val(address);
-    //     $("#txtTP").val(salary);
-    // }
+        let id = $(this).children(':nth-child(1)').text();
+        let name = $(this).children(':nth-child(2)').text();
+        let address = $(this).children(':nth-child(3)').text();
+        let salary = $(this).children(':nth-child(4)').text();
+
+        setTextFieldValues(id,name,address,salary);
+    });
+}
+//check this out.?
+
+
+function setTextFieldValues(id, name, address, salary) {
+    $("#txtID").val(id);
+    $("#txtName").val(name);
+    $("#txtAddress").val(address);
+    $("#txtTP").val(salary);
+}
 
 
 </script>
