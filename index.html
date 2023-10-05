@@ -565,9 +565,8 @@
 
     function getAllCustomers(){
         //remove all the child elements of tbody before adding the table rows
-        $("#savecustomer").empty();
 
-        for (let i = 0; i < customers.length; i++) {
+
             var customer= {
                 id: $('#txtID').val(),
                 name: $('#txtName').val(),
@@ -584,7 +583,7 @@
 
             $("#cusTable").append(row)
         }
-    }
+
 
 
     ///////////////////////////////////////////////////
