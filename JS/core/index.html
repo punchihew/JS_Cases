@@ -59,6 +59,15 @@
   // .eq(); //jQuery Object
   //.get(); will return html element (cannot invoke jQuery methods after calling get method)
 
+
+  // body>section>ul>li:last-child
+  // $('body').children('section').children('ul').children(':nth-child(3)').css('color','red');
+  // $('body').children('section').children('ul').children(':eq(2)').css('color','red');
+  $('body').children('section').children('ul').children().eq(2).css({
+    'color':'red',
+    'font-size':'30px'
+  });
+
 </script>
 </body>
 </html>
