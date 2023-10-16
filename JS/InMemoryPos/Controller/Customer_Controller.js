@@ -20,3 +20,10 @@ $("#customerIdText").keyup(function (e){
         $("#customerIdText").css("border-color",  "red");
     }
 });
+
+$("#customerIdText").keydown(function (e){
+    if(e.keyCode == 13 && regexId.test($("#customerIdText").val())) {
+        $("#customerNameText").focus();
+    }
+});
+
