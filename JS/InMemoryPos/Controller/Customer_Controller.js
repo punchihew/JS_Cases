@@ -27,3 +27,17 @@ $("#customerIdText").keydown(function (e){
     }
 });
 
+$("#customerNameText").keyup(function (e){
+    if (regexName.test($("customerNameText").val())){
+        $("#customerNameText").css("border-color",  "transparent");
+    }else{
+        $("#customerNameText").css("border-color",  "red");
+    }
+});
+
+$("#customerNameText").keydown(function (e){
+    if(e.keyCode == 13 && regexName.test($("#customerNameText").val())){
+        $("#customerTelText").focus();
+    }
+});
+
