@@ -125,7 +125,7 @@
                             <th scope="col">Salary</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tbody">
                         <tr>
                             <th scope="row">C001</th>
                             <td>Navishka</td>
@@ -541,6 +541,7 @@
     //refactor save with jQuery
     $("#savecustomer").click(function () {
 
+
         let cus_ID = $("#txtID").val();
         let cus_Name = $("#txtName").val();
         let cus_Address = $("#txtAddress").val();
@@ -565,13 +566,8 @@
 
     function getAllCustomers(){
         //remove all the child elements of tbody before adding the table rows
-
-            var customer= {
-                id: $('#txtID').val(),
-                name: $('#txtName').val(),
-                address: $('#txtAddress').val(),
-                salary: $('#txtTP').val()
-            }
+        $("#tbody").empty();
+        for (const customer of customers) {
 
             let row= `<tr>
                 <td>${customer.id}</td>
@@ -582,46 +578,50 @@
 
             $("#cusTable").append(row)
 
+            bindEvents();
+
+            $(`#cusTable tr`).dblclick(function (){
+                $(this).closest("tr").remove();      // Finds the closest row <t
+            });
         }
+
+    }
 
 
     //////////////////////////////////////////////////////////////////////////////////
 
-$('#deletecustomer').click(function (){
 
+    $(`#cusTable tr`).dblclick(function (){
+        $(this).closest("tr").remove();      // Finds the closest row <t
     });
 
-// function bindEvents(){
-//     $('#cusTable>tr').click(function () {
-//         // console.log(this);//tr -> this will return tr html element
-//         // console.log($(this));//jquery ob //if we want to access jQuery method we have to convert it to a jquery object
-//         // console.log($(this).text()); // now here it will return all the text of tr
-//
-//         let id = $(this).children(':nth-child(1)').text();
-//         let name = $(this).children(':nth-child(2)').text();
-//         let address = $(this).children(':nth-child(3)').text();
-//         let salary = $(this).children(':nth-child(4)').text();
-//
-//         setTextFieldValues(id,name,address,salary);
-//     });
-// }
-// //check this out.?
-//
-//
-// function setTextFieldValues(id, name, address, salary) {
-//     $("#txtID").val(id);
-//     $("#txtName").val(name);
-//     $("#txtAddress").val(address);
-//     $("#txtTP").val(salary);
-// }
+
+function bindEvents(){
+    $('#cusTable tr').click(function () {
+        console.log(this);//tr -> this will return tr html element
+        console.log($(this));//jquery ob //if we want to access jQuery method we have to convert it to a jquery object
+        console.log($(this).text()); // now here it will return all the text of tr
+
+        let id = $(this).children(':nth-child(1)').text();
+        let name = $(this).children(':nth-child(2)').text();
+        let address = $(this).children(':nth-child(3)').text();
+        let salary = $(this).children(':nth-child(4)').text();
+
+        setTextFieldValues(id,name,address,salary);
+    });
+}
+//check this out.?
+
+
+function setTextFieldValues(id, name, address, salary) {
+    $("#txtID").val(id);
+    $("#txtName").val(name);
+    $("#txtAddress").val(address);
+    $("#txtTP").val(salary);
+}
 
 
 </script>
-
-
-
-
-
 
 
 <script src="../JQrey/accepsts/css/Boostrap/css/bootstrap.css"></script>
