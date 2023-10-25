@@ -13,6 +13,28 @@
        .colur{
             color: #162A5F;
         }
+        /*ID Selector:*/
+       #colur{
+           color: #9eeaf9;
+       }
+        /*Child Selector:*/
+     body>section>div>p{
+         color: #0dcaf0;
+     }
+
+        /*Attribute Selector:*/
+        [target="_blank"] {
+            color: orange;
+        }
+        /*Pseudo-Class Selector:*/
+        p:hover{
+            text-decoration: underline;
+        }
+        /*Pseudo-Element Selector:*/
+        p::first-line {
+            font-size: 18px;
+        }
+
     </style>
 </head>
 <body>
@@ -24,6 +46,16 @@
     <p class="colur">
         Navishka Punchihewa
     </p>
+
+    <p id="colur">
+        Navishka Punchihewa
+    </p>
+
+    <div>
+        <p>
+            Navishka punchihewa
+        </p>
+    </div>
 </section>
 
 </body>
