@@ -44,14 +44,67 @@
 
     let name = new array("","","")
 
+    // last index එක remove කරනො.
     arr.pop();
-    arr.push();
+
+    // array එකේ last index එක ලගට අලුත් element එකක් add කරනො.
+    arr.push("new Value");
+
+
+    // array එකෙ 1st index එක remove කරනො.
     arr.shift();
+
+    // array එකෙ 1st index එක ලගට අලුත් element එකක් add කරනො.
     arr.unshift("New Value");
+
+  /*  Index number range එකක් දීල,
+        array එකකින් කෑල්ලක් වෙන්කරගෙන අලුත් array එකක් හදන්න.*/
     arr.slice( start_index , end_index );
+
+    // array එකකින් අවශය index ගානක් remove කරන්න
     arr.splice( start_index , index_count );
+
+    // Value එකක් තියෙන index එක return කරන්න.
     arr.indexOf( "Value" );
 
+    arr.reverse();
+    arr.sort();
+
+
+    // declarations
+    function f( name) {
+        console.log("Hello, " + name+ "!");
+
+    }
+
+    //expression functioin
+    const bane = function f1() {
+        
+    }
+
+    //select h1 and apply red color with JS
+    document.querySelector("h1").style.color = 'red';
+
+    //Doing the same with jQuery
+    $("h2").css('color','red');
+
+
+    document.querySelector("h4").style.color="red";
+    $("hl").css('colors','red');
+
+
+    $("h1");// type selector
+    $("#ulID")//id selector
+    $(".para");//class selector
+    $("[id]"); //attribute selector
+    $("*"); //Universal selector
+    $("div:nth-child(1)");//pseudo class
+    $("p::first-line");//pseudo elements // so sad not working
+    $("p,h1");//grouping selectors
+    $("section div");//descendent combinator
+    $("section>div");//child combinator
+    $("h2+p");//Adjacent combinator
+    $("h2~p");//General siblings combinator
 
 
 </script>
